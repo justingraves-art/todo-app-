@@ -1,0 +1,81 @@
+
+:root {
+    --primary: #4e288a;
+    --secondary: #8939d8;
+    --secondary-hover:#070a0e;
+    --pink: #ff00fc;
+  }
+  nav {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  nav, footer {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link:hover {
+    color: var(--secondary-hover);
+  }
+  
+
+  .btn-primary {
+    background-color:var(--secondary);
+    color: white;
+    border-color: transparent;
+  }
+
+  .bg-primary:hover {
+    background-color: var(--secondary-hover);
+  }
+
+  .navbar-toggler {
+    border: none;
+    box-shadow: none;
+  }
+
+.bg-img {
+  
+  min-height: 90vh;
+  height: auto;
+  background-size: cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+  background:linear-gradient(var(--primary), #6c2bad, var(--primary)), 
+  radial-gradient(circle 700px at 20% 30%, rgba(208, 188, 202, 0.734), transparent),
+  radial-gradient(circle 500px at 80% 70%, rgba(241, 235, 239, 0.533), transparent);
+
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.461);
+}
+
+
+
+body {
+  background-color: var(--primary);
+}
+
+.bg-translucent {
+  background-color: #000063;
+}
+
+textarea {
+  resize: none;
+}
+
+form a {
+  text-decoration: none;
+  color: white;
+  transition: 0.2 ease-in-out;
+}
+
+form a:hover {
+  color: var(--secondary);
+}
+
+
