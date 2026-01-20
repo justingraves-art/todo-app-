@@ -114,19 +114,24 @@ app.post("/api/tasks/todo", async (req, res) => {
 
 
 //Complete the task 
-app.patch("/api/tasks/todo", async (req, res) => {
+app.patch("/api/tasks/complete/:id", async (req, res) => {
     try {
-        const {title, description, dueDate} = req.body;
+        const { completed } = req.body;
+        const taskId = req.params.id;
 
-       const taskData = { title, description, dueDate};
-       const createTask = new Task(taskData);
-       const newTask = await createTask.save();
-        
-        res.json({ message: "Task created successfully!", task: newTask});
+        const taskComplete = await Task.findByIdAndUpdate(taskId, { completed }, { new: true });
+
+        if (!taskComplete) {
+            return res.status(404).json({message: "Task not 'found!'"});
+
+            
+        }
+
+        res.json({ task: taskComplete, message: "Task set to ` complete`"});
         
     } catch (error) {
         console.error("Error:",error);  
-        res.status(500).json({ message: "Error creating tasks!"});      
+        res.status(500).json({ message: "Error completeing tasks!"});      
     }
 });
 

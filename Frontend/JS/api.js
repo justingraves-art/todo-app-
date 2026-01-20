@@ -200,7 +200,7 @@ async function createNewTask() {
 
 // Updating the tasks (complete)
 async function completeTask(taskId){
-console.log("hello")
+
     try {
         const response = await fetch(`${url}/api/tasks/complete/${taskId}`, {
             method: "PATCH",
